@@ -109,7 +109,6 @@
 
   <div class="container">
     
-    <!-- Sezione Dettagli Evento -->
     <div class="card">
       <h2>Ci Sposiamo!</h2>
       <p>In questa pagina troverete tutte le informazioni utili sull'evento.</p>
@@ -130,55 +129,12 @@
       </div>
     </div>
 
-    <!-- Sezione Programma e Location -->
     <div class="card">
       <h3>Programma della Giornata</h3>
       <p><strong>Location:</strong> Ristorante Pianone - Città Alta, Bergamo</p>
       <p><strong>Cerimonia & Ricevimento:</strong> Gli orari dettagliati e le indicazioni sulla viabilità/parcheggi verranno forniti a breve.</p>
     </div>
 
-    <!-- Sezione RSVP -->
     <div class="card">
       <h3>Conferma di Partecipazione</h3>
-      <p>Per aiutarci ad organizzare al meglio la giornata, ti chiediamo gentilmente di confermare la tua presenza e indicarci eventuali intolleranze o allergie alimentari.</p>
-      
-      <!-- SOSTITUISCI IL LINK SOTTO CON IL TUO GOOGLE FORM -->
-      <https://docs.google.com/forms/d/e/1FAIpQLScr6lfcgi_fMpAXW9YUnZzU_GFduq2e8eLZ05gb1HOyv69esA/viewform?usp=publish-editor>
-        Conferma la tua presenza (RSVP)
-      </a>
-    </div>
-
-  </div>
-
-  <footer>
-    <p>A presto!</p>
-  </footer>
-
-  <!-- Script per il Countdown -->
-  <script>
-    // Imposta la data del matrimonio (Anno, Mese - 1, Giorno, Ora, Minuti)
-    // Nota: I mesi in JavaScript vanno da 0 (Gennaio) a 11 (Dicembre)
-    const weddingDate = new Date(2027, 3, 24, 11, 0, 0).getTime();
-
-    const timer = setInterval(function() {
-      const now = new Date().getTime();
-      const distance = weddingDate - now;
-
-      if (distance < 0) {
-        clearInterval(timer);
-        document.querySelector('.countdown').innerHTML = "<h3>Oggi è il gran giorno! 🎉</h3>";
-        return;
-      }
-
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-
-      document.getElementById("days").innerText = days;
-      document.getElementById("hours").innerText = hours;
-      document.getElementById("minutes").innerText = minutes;
-    }, 1000);
-  </script>
-
-</body>
-</html>
+      <p>Per aiutarci ad organizzare al meglio la giornata, ti chiediamo gentilmente di confer
