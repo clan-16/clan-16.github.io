@@ -1,8 +1,183 @@
-<html>
+<!DOCTYPE1 html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Il Nostro Matrimonio</title>
+  <style>
+    :root {
+      --primary-color: #5a6b5c; /* Verde salvia elegante */
+      --accent-color: #d4a373;  /* Tono caldo/oro */
+      --bg-color: #fefae0;      /* Sfondo crema chiaro */
+      --text-color: #333333;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    header {
+      padding: 60px 20px 20px;
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      color: var(--primary-color);
+      margin-bottom: 10px;
+    }
+
+    .date {
+      font-size: 1.3rem;
+      letter-spacing: 2px;
+      color: var(--accent-color);
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 30px;
+      margin: 20px 0;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    }
+
+    .countdown {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 15px;
+    }
+
+    .countdown-item {
+      background: var(--bg-color);
+      padding: 10px 15px;
+      border-radius: 8px;
+      min-width: 60px;
+    }
+
+    .countdown-number {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: var(--primary-color);
+    }
+
+    .btn-rsvp {
+      display: inline-block;
+      background-color: var(--primary-color);
+      color: white;
+      padding: 15px 35px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 30px;
+      margin-top: 20px;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      box-shadow: 0 4px 10px rgba(90, 107, 92, 0.3);
+    }
+
+    .btn-rsvp:hover {
+      background-color: #485549;
+      transform: translateY(-2px);
+    }
+
+    footer {
+      margin-top: 40px;
+      padding: 20px;
+      font-size: 0.9rem;
+      color: #777;
+    }
+  </style>
+</head>
 <body>
 
-<h1>My First Heading</h1>
-<p>My first paragraph.</p>
+  <header>
+    <h1>Claudio & Partner</h1>
+    <p class="date">24 Aprile 2027</p>
+  </header>
+
+  <div class="container">
+    
+    <!-- Sezione Dettagli Evento -->
+    <div class="card">
+      <h2>Ci Sposiamo!</h2>
+      <p>Siamo felicissimi di festeggiare questo giorno speciale insieme a voi. In questa pagina troverete tutte le informazioni utili sull'evento.</p>
+      
+      <div class="countdown">
+        <div class="countdown-item">
+          <div id="days" class="countdown-number">0</div>
+          <div>Giorni</div>
+        </div>
+        <div class="countdown-item">
+          <div id="hours" class="countdown-number">0</div>
+          <div>Ore</div>
+        </div>
+        <div class="countdown-item">
+          <div id="minutes" class="countdown-number">0</div>
+          <div>Minuti</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sezione Programma e Location -->
+    <div class="card">
+      <h3>Programma della Giornata</h3>
+      <p><strong>Cerimonia & Ricevimento:</strong> Orari e indicazioni stradali verranno forniti a breve.</p>
+    </div>
+
+    <!-- Sezione RSVP -->
+    <div class="card">
+      <h3>Conferma di Partecipazione</h3>
+      <p>Per aiutarci ad organizzare al meglio la giornata, ti chiediamo gentilmente di confermare la tua presenza e indicarci eventuali intolleranze o allergie alimentari.</p>
+      
+      <!-- SOSTITUISCI IL LINK SOTTO CON IL TUO GOOGLE FORM -->
+      <a href="https://forms.google.com/YOUR_FORM_LINK" target="_blank" class="btn-rsvp">
+        Conferma la tua presenza (RSVP)
+      </a>
+    </div>
+
+  </div>
+
+  <footer>
+    <p>Non vediamo l'ora di festeggiare con voi! ❤️</p>
+  </footer>
+
+  <!-- Script per il Countdown -->
+  <script>
+    // Imposta la data del matrimonio (Anno, Mese - 1, Giorno, Ora, Minuti)
+    // Nota: I mesi in JavaScript vanno da 0 (Gennaio) a 11 (Dicembre)
+    const weddingDate = new Date(2027, 3, 24, 11, 0, 0).getTime();
+
+    const timer = setInterval(function() {
+      const now = new Date().getTime();
+      const distance = weddingDate - now;
+
+      if (distance < 0) {
+        clearInterval(timer);
+        document.querySelector('.countdown').innerHTML = "<h3>Oggi è il gran giorno! 🎉</h3>";
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+      document.getElementById("days").innerText = days;
+      document.getElementById("hours").innerText = hours;
+      document.getElementById("minutes").innerText = minutes;
+    }, 1000);
+  </script>
 
 </body>
 </html>
