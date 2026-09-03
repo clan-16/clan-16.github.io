@@ -6,9 +6,9 @@
   <title>Info Matrimonio</title>
   <style>
     :root {
-      --primary-color: #5a6b5c; /* Verde salvia elegante */
-      --accent-color: #d4a373;  /* Tono caldo/oro */
-      --bg-color: #fefae0;      /* Sfondo crema chiaro */
+      --primary-color: #5a6b5c;
+      --accent-color: #d4a373;
+      --bg-color: #fefae0;
       --text-color: #333333;
     }
 
@@ -40,7 +40,7 @@
     }
 
     .container {
-      max-width: 700px;
+      max-width: 50%; /* Il riquadro occupa al massimo la metà della larghezza dello schermo */
       margin: 0 auto;
       padding: 20px;
     }
@@ -51,26 +51,11 @@
       padding: 30px;
       margin: 20px 0;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-    }
-
-    .countdown {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      margin-top: 15px;
-    }
-
-    .countdown-item {
-      background: var(--bg-color);
-      padding: 10px 15px;
-      border-radius: 8px;
-      min-width: 60px;
-    }
-
-    .countdown-number {
-      font-size: 1.5rem;
-      font-weight: bold;
-      color: var(--primary-color);
+      
+      /* Allineamento al centro e a capo automatico per il testo lungo */
+      text-align: center;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
     }
 
     .btn-rsvp {
@@ -98,6 +83,13 @@
       font-size: 0.9rem;
       color: #777;
     }
+
+    /* Ottimizzazione per smartphone: a schermi piccoli forza il 90% per non stringere troppo */
+    @media (max-width: 768px) {
+      .container {
+        max-width: 90%;
+      }
+    }
   </style>
 </head>
 <body>
@@ -107,29 +99,25 @@
     <p class="date">24 Aprile 2027</p>
   </header>
 
-    <!-- Sezione Programma e Location -->
+  <div class="container">
     <div class="card">
       <h3>Programma</h3>
       <p><strong>Location:</strong> Ristorante Il Pianone - Città Alta, Bergamo</p>
       <p><strong>Orario:</strong> Ore 12:00-18:00</p>
-      <p><strong>Percorso:</strong> Il percorso consigliato dal centro di Bergamo è:
-Largo Porta Nuova → Viale Vittorio Emanuele → Porta San Agostino → Viale delle Mura → Largo Colle Aperto → Via Beltrami → Via al Pianone.</p>
-‍      <p><strong>Nota:</strong> Alcuni navigatori suggeriscono scorciatoie più strette ma è meglio di impostare il percorso solo una volta arrivati a Largo Porta Nuova.</p>
-‍      <p><strong>ZTL:</strong> Il sabato ad Aprile è attiva solo dalle 21:00, quindi non sarà un problema.</p>
-‍      <p><strong>Parcheggio:</strong> Disponibile presso il ristorante per i clienti.</p>
+      <p><strong>Percorso:</strong> Il percorso consigliato dal centro di Bergamo è: Largo Porta Nuova → Viale Vittorio Emanuele → Porta San Agostino → Viale delle Mura → Largo Colle Aperto → Via Beltrami → Via al Pianone.</p>
+      <p><strong>Nota:</strong> Alcuni navigatori suggeriscono scorciatoie più strette ma è meglio impostare il percorso solo una volta arrivati a Largo Porta Nuova.</p>
+      <p><strong>ZTL:</strong> Il sabato ad Aprile è attiva solo dalle 21:00, quindi non sarà un problema.</p>
+      <p><strong>Parcheggio:</strong> Disponibile presso il ristorante per i clienti.</p>
     </div>
 
-    <!-- Sezione RSVP -->
     <div class="card">
       <h3>Conferma di Partecipazione</h3>
       <p>Per aiutarci nell'organizzazione, ti chiediamo gentilmente di confermare la tua presenza e indicarci eventuali intolleranze o preferenze alimentari.</p>
       
-      <!-- PULSANTE GOOGLE FORM -->
       <a href="https://docs.google.com/forms/d/1Y_uB6seqCqTSqQjT80c3lpWD0M5DjRgZcxieMRs7ymY/edit" target="_blank" class="btn-rsvp">
         Conferma la tua presenza (RSVP)
       </a>
     </div>
-
   </div>
 
   <footer>
