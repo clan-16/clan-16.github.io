@@ -156,29 +156,6 @@
 
   <!-- Script per il Countdown -->
   <script>
-    // Imposta la data del matrimonio (Anno, Mese - 1, Giorno, Ora, Minuti)
-    // Nota: I mesi in JavaScript vanno da 0 (Gennaio) a 11 (Dicembre)
-    const weddingDate = new Date(2027, 3, 24, 11, 0, 0).getTime();
-
-    const timer = setInterval(function() {
-      const now = new Date().getTime();
-      const distance = weddingDate - now;
-
-      if (distance < 0) {
-        clearInterval(timer);
-        document.querySelector('.countdown').innerHTML = "<h3>Oggi è il gran giorno! 🎉</h3>";
-        return;
-      }
-
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-
-      document.getElementById("days").innerText = days;
-      document.getElementById("hours").innerText = hours;
-      document.getElementById("minutes").innerText = minutes;
-    }, 1000);
-  </script>
-
+   
 </body>
 </html>
