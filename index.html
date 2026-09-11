@@ -1,6 +1,19 @@
 <!DOCTYPE html>
 <html lang="it">
-  
+  <script>
+  (function() {
+    // IMPOSTA QUI LA TUA PASSWORD (attenzione a maiuscole/minuscole)
+    var passwordCorretta = "Woody16"; 
+
+    var inserita = prompt("Inserisci la password per accedere al sito:");
+    
+    if (inserita !== passwordCorretta) {
+      alert("Password errata!");
+      // Reindirizza altrove o ricarica la pagina finché non inserisce quella giusta
+      window.location.href = "https://www.google.com";
+    }
+  })();
+</script>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
