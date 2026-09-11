@@ -22,7 +22,16 @@
     }
 
     header {
-      padding: 60px 20px 20px;
+      padding: 40px 20px 20px;
+    }
+
+    /* Stile per l'immagine in alto */
+    .top-image {
+      width: 100%;
+      max-width: 400px; /* Dimensione massima consigliata per l'header */
+      height: auto;
+      border-radius: 12px; /* Angoli arrotondati abbinati alle card */
+      margin-bottom: 20px;
     }
 
     h1 {
@@ -89,12 +98,18 @@
       .container {
         max-width: 90%;
       }
+      .top-image {
+        max-width: 80%; /* Si adatta meglio agli schermi dei telefoni */
+      }
     }
   </style>
 </head>
 <body>
 
   <header>
+    <!-- IMMAGINE INSERITA QUI IN ALTO -->
+    <img src="images/foto-copertina.jpg" alt="Anna e Claudio" class="top-image">
+    
     <h1>Anna & Claudio</h1>
     <p class="date">data</p>
   </header>
